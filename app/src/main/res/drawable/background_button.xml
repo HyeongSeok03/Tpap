@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#80000000"/> <!-- 버튼의 배경색 설정 -->
+    <corners android:radius="0dp"/> <!-- 모서리 곡률을 0으로 설정하여 사각형 모양 -->
+    <padding
+        android:left="16dp"
+        android:right="16dp"
+        android:top="10dp"
+        android:bottom="10dp"/> <!-- 패딩 설정 -->
+</shape>

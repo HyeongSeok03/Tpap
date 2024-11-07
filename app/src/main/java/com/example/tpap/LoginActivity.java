@@ -35,6 +35,8 @@ public class LoginActivity extends AppCompatActivity {
                 if (username.equals("qwer") && password.equals("qwer"))
                 {
                     Log.i("Transition", "LoginActivity -> MainActivity");
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
                 }
             }
         });
