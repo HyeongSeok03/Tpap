@@ -1,5 +1,6 @@
 package com.example.tpap.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.tpap.R;
+import com.example.tpap.fragments.AccountFragment;
+import com.example.tpap.fragments.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
     Button home_button, account_button, plus_button, planStart_button;
@@ -29,15 +32,20 @@ public class MainActivity extends AppCompatActivity {
 
         planStart_button = findViewById(R.id.planStart_button);
 
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new HomeFragment()).commit();
+        }
+
         home_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new HomeFragment()).commit();
             }
         });
         account_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new AccountFragment()).commit();
             }
         });
         plus_button.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         planStart_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PreplanActivity.class);
+                startActivity(intent);
             }
         });
     }
