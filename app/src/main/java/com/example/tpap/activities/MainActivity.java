@@ -10,8 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.tpap.R;
-import com.example.tpap.fragments.AccountFragment;
-import com.example.tpap.fragments.HomeFragment;
+import com.example.tpap.fragments.MainAccountFragment;
+import com.example.tpap.fragments.MainHomeFragment;
 
 public class MainActivity extends AppCompatActivity {
     Button home_button, account_button, plus_button, planStart_button;
@@ -33,19 +33,19 @@ public class MainActivity extends AppCompatActivity {
         planStart_button = findViewById(R.id.planStart_button);
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new HomeFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new MainHomeFragment()).commit();
         }
 
         home_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new HomeFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new MainHomeFragment()).commit();
             }
         });
         account_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new AccountFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new MainAccountFragment()).commit();
             }
         });
         plus_button.setOnClickListener(new View.OnClickListener() {
