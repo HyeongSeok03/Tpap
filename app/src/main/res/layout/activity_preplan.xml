@@ -39,7 +39,7 @@
         android:backgroundTint="#00BCD4" />
 
     <FrameLayout
-        android:id="@+id/frame"
+        android:id="@+id/frame_preplan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/title_view"
