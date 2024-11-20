@@ -54,10 +54,12 @@ public class PreplanActivity extends AppCompatActivity {
                     case date:
                         getSupportFragmentManager().beginTransaction().replace(R.id.frame_preplan, new TravelLocationFragment()).commit();
                         title_textView.setText("Where");
+                        fragState = FragState.location;
                         break;
                     case style:
                         getSupportFragmentManager().beginTransaction().replace(R.id.frame_preplan, new TravelDateFragment()).commit();
                         title_textView.setText("When");
+                        fragState = FragState.date;
                         break;
                 }
             }
@@ -72,10 +74,12 @@ public class PreplanActivity extends AppCompatActivity {
                     case location:
                         getSupportFragmentManager().beginTransaction().replace(R.id.frame_preplan, new TravelDateFragment()).commit();
                         title_textView.setText("When");
+                        fragState = FragState.date;
                         break;
                     case date:
                         getSupportFragmentManager().beginTransaction().replace(R.id.frame_preplan, new TravelStyleFragment()).commit();
                         title_textView.setText("How");
+                        fragState = FragState.style;
                         break;
                     case style:
                         break;
