@@ -24,10 +24,9 @@ public class PreplanActivity extends AppCompatActivity {
 
     private TravelInfo travelInfo;
 
-    String travel_destination;
-    String travel_startDate;
-    String travel_endDate;
-    String Style;
+    String travel_destination = "";
+    String travel_date = "test";
+    String travel_style = "test";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,16 +84,34 @@ public class PreplanActivity extends AppCompatActivity {
                 switch (fragState)
                 {
                     case location:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_preplan, new TravelDateFragment()).commit();
-                        title_textView.setText("When");
-                        fragState = FragState.date;
+                        if (travel_destination.isEmpty())
+                        {
+                            Toast.makeText(getApplicationContext(), "You should select your destination.", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frame_preplan, new TravelDateFragment()).commit();
+                            title_textView.setText("When");
+                            fragState = FragState.date;
+                        }
                         break;
                     case date:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_preplan, new TravelStyleFragment()).commit();
-                        title_textView.setText("How");
-                        fragState = FragState.style;
+                        if (travel_date.isEmpty())
+                        {
+                            Toast.makeText(getApplicationContext(), "You should select your travel dates.", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frame_preplan, new TravelStyleFragment()).commit();
+                            title_textView.setText("How");
+                            fragState = FragState.style;
+                        }
                         break;
                     case style:
+                        if (travel_style.isEmpty())
+                        {
+                            Toast.makeText(getApplicationContext(), "You should select your travel style.", Toast.LENGTH_SHORT).show();
+                        }
                         break;
                 }
             }
