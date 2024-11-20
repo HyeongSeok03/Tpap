@@ -86,5 +86,6 @@ public class PreplanActivity extends AppCompatActivity {
                 }
             }
         });
+        });
     }
 }
