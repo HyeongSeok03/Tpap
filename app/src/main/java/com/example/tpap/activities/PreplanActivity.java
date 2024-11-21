@@ -14,7 +14,7 @@ import com.example.tpap.R;
 import com.example.tpap.fragments.TravelDateFragment;
 import com.example.tpap.fragments.TravelLocationFragment;
 import com.example.tpap.fragments.TravelStyleFragment;
-import com.example.tpap.view_models.TravelInfo;
+import com.example.tpap.view_models.TravelInfoViewModel;
 
 public class PreplanActivity extends AppCompatActivity {
     enum FragState {location, date, style}
@@ -22,7 +22,7 @@ public class PreplanActivity extends AppCompatActivity {
     Button exit_button, previous_button, next_button;
     TextView title_textView;
 
-    private TravelInfo travelInfo;
+    private TravelInfoViewModel travelInfoVM;
 
     String travel_destination = "";
     String travel_date = "test";
@@ -39,7 +39,7 @@ public class PreplanActivity extends AppCompatActivity {
 
         title_textView = findViewById(R.id.title_textView);
 
-        travelInfo = new ViewModelProvider(this).get(TravelInfo.class);
+        travelInfoVM = new ViewModelProvider(this).get(TravelInfoViewModel.class);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_preplan, new TravelLocationFragment()).commit();
@@ -117,7 +117,7 @@ public class PreplanActivity extends AppCompatActivity {
             }
         });
 
-        travelInfo.location.observe(this, location -> {
+        travelInfoVM.location.observe(this, location -> {
             // location 데이터가 업데이트되면 Toast로 표시
             travel_destination = location;
             Toast.makeText(this, "선택된 여행지: " + travel_destination, Toast.LENGTH_SHORT).show();
