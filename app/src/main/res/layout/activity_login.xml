@@ -63,21 +63,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/username_editText" />
 
-    <Button
+    <ImageButton
+        android:id="@+id/visibility_toggle"
         android:layout_width="48dp"
         android:layout_height="48dp"
         app:layout_constraintEnd_toEndOf="@+id/password_editText"
         app:layout_constraintTop_toTopOf="@+id/password_editText"
         app:layout_constraintBottom_toBottomOf="@+id/password_editText"
-        android:text="\@"
-        android:textStyle="bold"
-        android:backgroundTint="#00FFFFFF"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp"
-        android:paddingBottom="0dp"
-        android:layout_marginRight="10dp"/>
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/password_visibility"
+        android:scaleType="centerInside"/>
 
     <Button
         android:id="@+id/login_button"
