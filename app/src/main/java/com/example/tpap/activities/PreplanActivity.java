@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,7 +20,8 @@ import com.example.tpap.view_models.TravelInfoViewModel;
 public class PreplanActivity extends AppCompatActivity {
     enum FragState {location, date, style}
     FragState fragState = FragState.location;
-    Button exit_button, previous_button, next_button;
+    Button previous_button, next_button;
+    ImageButton exit_button;
     TextView title_textView;
 
     private TravelInfoViewModel travelInfoVM;
@@ -117,7 +119,7 @@ public class PreplanActivity extends AppCompatActivity {
             }
         });
 
-        travelInfoVM.location.observe(this, location -> {
+        travelInfoVM.destination.observe(this, location -> {
             // location 데이터가 업데이트되면 Toast로 표시
             travel_destination = location;
             Toast.makeText(this, "선택된 여행지: " + travel_destination, Toast.LENGTH_SHORT).show();

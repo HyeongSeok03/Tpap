@@ -14,7 +14,8 @@ import com.example.tpap.fragments.MainAccountFragment;
 import com.example.tpap.fragments.MainHomeFragment;
 
 public class MainActivity extends AppCompatActivity {
-    Button home_button, account_button, plus_button, planStart_button;
+    ImageButton home_button, account_button, plus_button;
+    Button planStart_button;
     ImageButton background_button;
     ConstraintLayout constraint_layout;
 

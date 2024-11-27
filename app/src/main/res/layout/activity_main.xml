@@ -37,53 +37,52 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
         android:gravity="center"
-        android:background="#E6E6E6"
-        android:paddingBottom="20dp"
+        android:orientation="horizontal"
         android:paddingTop="5dp"
-        android:orientation="horizontal">
+        android:paddingBottom="20dp">
+
         <Space
             android:layout_width="0dp"
             android:layout_height="60dp"
-            android:layout_weight="1"/>
-        <android.widget.Button
+            android:layout_weight="1" />
+
+        <ImageButton
             android:id="@+id/home_button"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/navbar_button"
-            android:text="H"
-            android:textColor="@color/black"
-            android:textSize="20sp"/>
+            android:background="@drawable/baseline_home_24"
+            android:backgroundTint="@color/black" />
+
         <Space
             android:layout_width="0dp"
             android:layout_height="60dp"
-            android:layout_weight="1"/>
-        <android.widget.Button
+            android:layout_weight="1" />
+
+        <ImageButton
             android:id="@+id/plus_button"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/navbar_plus_button"
-            android:text="+"
-            android:textColor="@color/black"
-            android:textSize="20dp"/>
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/baseline_add_circle_24"
+            android:backgroundTint="#FF9800" />
+
         <Space
             android:layout_width="0dp"
             android:layout_height="60dp"
-            android:layout_weight="1"/>
-        <android.widget.Button
+            android:layout_weight="1" />
+
+        <ImageButton
             android:id="@+id/account_button"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/navbar_button"
-            android:text="A"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:paddingRight="0dp"
-            android:paddingLeft="0dp"/>
+            android:background="@drawable/baseline_person_24"
+            android:backgroundTint="#C8C8C8" />
+
         <Space
             android:layout_width="0dp"
             android:layout_height="60dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
