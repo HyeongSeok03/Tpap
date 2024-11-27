@@ -10,38 +10,41 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
-
+import android.widget.SimpleAdapter;
 import com.example.tpap.R;
-import com.example.tpap.view_models.TravelInfo;
+import com.example.tpap.view_models.TravelInfoViewModel;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.AutocompletePrediction;
 import com.google.android.libraries.places.api.net.FindAutocompletePredictionsRequest;
 import com.google.android.libraries.places.api.net.PlacesClient;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 public class TravelLocationFragment extends Fragment {
-    private ArrayAdapter<String> adapter;
-    private ArrayList<String> results;
+    private SimpleAdapter adapter;
+    private List<HashMap<String, String>> results;
     private PlacesClient placesClient;
 
-    private TravelInfo travelInfo;
+    private TravelInfoViewModel travelInfoVM;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View fragmentView = inflater.inflate(R.layout.fragment_travel_location, container, false);
 
-        SearchView searchView = fragmentView.findViewById(R.id.searchView);
+        SearchView searchView = fragmentView.findViewById(R.id.country_searchView);
+
         ListView results_listView = fragmentView.findViewById(R.id.results_listView);
 
-        travelInfo = new ViewModelProvider(requireActivity()).get(TravelInfo.class);
+        travelInfoVM = new ViewModelProvider(requireActivity()).get(TravelInfoViewModel.class);
 
         results = new ArrayList<>();
-        adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, results);
+        adapter = new SimpleAdapter(requireContext(), results, android.R.layout.simple_list_item_2, new String[]{"primary", "secondary"}, new int[] {android.R.id.text1, android.R.id.text2});
         results_listView.setAdapter(adapter);
 
         Places.initialize(requireContext(), "AIzaSyBVMQQda-Awz_hWgiRiPBozdNFt5Bf2KIc");
@@ -58,6 +61,7 @@ public class TravelLocationFragment extends Fragment {
             public boolean onQueryTextChange(String newText) {
                 if (newText.isEmpty()) {
                     results_listView.setVisibility(View.GONE);
+                    travelInfoVM.destination.setValue(newText);
                 } else {
                     results_listView.setVisibility(View.VISIBLE);
                     // 필터링 또는 검색 수행
@@ -67,8 +71,10 @@ public class TravelLocationFragment extends Fragment {
             }
         });
 
+
+
         results_listView.setOnItemClickListener((parent, view, position, id) -> {
-            String location = adapter.getItem(position);
+            String location = ((HashMap<String, String>)adapter.getItem(position)).get("primary");
             searchView.setQuery(location, false);  // false로 설정하여 직접 검색을 트리거하지 않음
             // 키보드를 숨기기 위해 InputMethodManager를 사용
             InputMethodManager imm = (InputMethodManager) requireContext().getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -77,23 +83,27 @@ public class TravelLocationFragment extends Fragment {
             }
             // 리스트뷰를 숨기기
             results_listView.setVisibility(View.GONE);
-            // 여기서 location 값을 처리하면 됩니다.
-            travelInfo.location.setValue(location);
+
+            travelInfoVM.destination.setValue(location);
         });
 
         return fragmentView;
-
     }
 
     private void findPlaces(String query) {
         FindAutocompletePredictionsRequest request = FindAutocompletePredictionsRequest.builder()
-                .setQuery(query)
+                .setQuery(query).setTypesFilter(Arrays.asList("country", "locality"))
                 .build();
 
         placesClient.findAutocompletePredictions(request).addOnSuccessListener(response -> {
             results.clear();
             for (AutocompletePrediction prediction : response.getAutocompletePredictions()) {
-                results.add(prediction.getPrimaryText(null).toString());
+                String primaryText = prediction.getPrimaryText(null).toString();
+                String secondaryText = prediction.getSecondaryText(null).toString();
+                HashMap<String, String> item = new HashMap<>();
+                item.put("primary", primaryText); // 도시 이름
+                item.put("secondary", secondaryText); // 국가 이름
+                results.add(item);
             }
             adapter.notifyDataSetChanged();
         }).addOnFailureListener(exception -> {
