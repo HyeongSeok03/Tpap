@@ -37,7 +37,7 @@ public class TravelLocationFragment extends Fragment {
     {
         View fragmentView = inflater.inflate(R.layout.fragment_travel_location, container, false);
 
-        SearchView searchView = fragmentView.findViewById(R.id.country_searchView);
+        SearchView searchView = fragmentView.findViewById(R.id.searchView);
 
         ListView results_listView = fragmentView.findViewById(R.id.results_listView);
 
