@@ -1,5 +1,6 @@
 package com.example.tpap.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,13 +10,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.tpap.R;
 import com.example.tpap.fragments.TravelDateFragment;
 import com.example.tpap.fragments.TravelLocationFragment;
 import com.example.tpap.fragments.TravelStyleFragment;
+import com.example.tpap.states.BaseState;
+import com.example.tpap.states.LocationState;
 import com.example.tpap.view_models.TravelInfoViewModel;
+
+import java.util.prefs.BackingStoreException;
 
 public class PreplanActivity extends AppCompatActivity {
     enum FragState {location, date, style}
@@ -26,22 +32,28 @@ public class PreplanActivity extends AppCompatActivity {
 
     private TravelInfoViewModel travelInfoVM;
 
-    String travel_destination = "";
-    String travel_date = "test";
-    String travel_style = "test";
+    public String travel_destination = "";
+    public String travel_startDate = "";
+    public String travel_endDate = "";
+    public String travel_style = "";
+
+    BaseState currentState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preplan);
 
-        exit_button = findViewById(R.id.exit_button);
-        previous_button = findViewById(R.id.cancel_button);
+        exit_button = findViewById(R.id.close_button);
+        previous_button = findViewById(R.id.previous_button);
         next_button = findViewById(R.id.next_button);
 
         title_textView = findViewById(R.id.title_textView);
 
         travelInfoVM = new ViewModelProvider(this).get(TravelInfoViewModel.class);
+
+        currentState = new LocationState(this);
+        currentState.updateUI();
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_preplan, new TravelLocationFragment()).commit();
@@ -50,31 +62,18 @@ public class PreplanActivity extends AppCompatActivity {
         exit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PreplanActivity.this, MainActivity.class);
-                startActivity(intent);
+                activityTransaction(MainActivity.class);
             }
         });
 
         previous_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent;
-                switch (fragState)
+                BaseState previousState = currentState.previousState();
+                if (previousState != null)
                 {
-                    case location:
-                        intent = new Intent(PreplanActivity.this, MainActivity.class);
-                        startActivity(intent);
-                        break;
-                    case date:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_preplan, new TravelLocationFragment()).commit();
-                        title_textView.setText("Where");
-                        fragState = FragState.location;
-                        break;
-                    case style:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_preplan, new TravelDateFragment()).commit();
-                        title_textView.setText("When");
-                        fragState = FragState.date;
-                        break;
+                    currentState = previousState;
+                    currentState.updateUI();
                 }
             }
         });
@@ -82,39 +81,11 @@ public class PreplanActivity extends AppCompatActivity {
         next_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent;
-                switch (fragState)
+                BaseState nextState = currentState.nextState();
+                if (nextState != null)
                 {
-                    case location:
-                        if (travel_destination.isEmpty())
-                        {
-                            Toast.makeText(getApplicationContext(), "You should select your destination.", Toast.LENGTH_SHORT).show();
-                        }
-                        else
-                        {
-                            getSupportFragmentManager().beginTransaction().replace(R.id.frame_preplan, new TravelDateFragment()).commit();
-                            title_textView.setText("When");
-                            fragState = FragState.date;
-                        }
-                        break;
-                    case date:
-                        if (travel_date.isEmpty())
-                        {
-                            Toast.makeText(getApplicationContext(), "You should select your travel dates.", Toast.LENGTH_SHORT).show();
-                        }
-                        else
-                        {
-                            getSupportFragmentManager().beginTransaction().replace(R.id.frame_preplan, new TravelStyleFragment()).commit();
-                            title_textView.setText("How");
-                            fragState = FragState.style;
-                        }
-                        break;
-                    case style:
-                        if (travel_style.isEmpty())
-                        {
-                            Toast.makeText(getApplicationContext(), "You should select your travel style.", Toast.LENGTH_SHORT).show();
-                        }
-                        break;
+                    currentState = nextState;
+                    currentState.updateUI();
                 }
             }
         });
@@ -124,5 +95,51 @@ public class PreplanActivity extends AppCompatActivity {
             travel_destination = location;
             Toast.makeText(this, "선택된 여행지: " + travel_destination, Toast.LENGTH_SHORT).show();
         });
+        travelInfoVM.startDate.observe(this, startDate -> {
+            // location 데이터가 업데이트되면 Toast로 표시
+            travel_startDate = startDate;
+            Toast.makeText(this, "선택된 여행 시작 날짜: " + travel_startDate, Toast.LENGTH_SHORT).show();
+        });
+        travelInfoVM.endDate.observe(this, endDate -> {
+            // location 데이터가 업데이트되면 Toast로 표시
+            travel_endDate = endDate;
+            Toast.makeText(this, "선택된 여행 종료 날짜: " + travel_endDate, Toast.LENGTH_SHORT).show();
+        });
+    }
+    public void resetVM(int i)
+    {
+        switch (i)
+        {
+            case 1:
+                travelInfoVM.destination.setValue("");
+                break;
+            case 2:
+                travelInfoVM.startDate.setValue("");
+                travelInfoVM.endDate.setValue("");
+            case 3:
+                travelInfoVM.style.setValue("");
+        }
+    }
+    public void fragmentTransaction(Fragment fragment)
+    {
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_preplan, fragment).commit();
+    }
+    public void activityTransaction(Class<?> activity)
+    {
+        Intent intent = new Intent(PreplanActivity.this, activity);
+        startActivity(intent);
+    }
+    public void makeToast(String txt)
+    {
+        Toast.makeText(getApplicationContext(), txt, Toast.LENGTH_SHORT).show();
+    }
+    public void setTitle(String title)
+    {
+        title_textView.setText(title);
+    }
+    public void setButtonText(String txt1, String txt2)
+    {
+        previous_button.setText(txt1);
+        next_button.setText(txt2);
     }
 }
