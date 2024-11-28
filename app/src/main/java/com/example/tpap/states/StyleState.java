@@ -14,6 +14,10 @@ public class StyleState implements BaseState{
     }
     @Override
     public BaseState nextState() {
+        if (activity.travel_style.isEmpty())
+        {
+            activity.makeToast("You should select your travel style");
+        }
         return null;
     }
 

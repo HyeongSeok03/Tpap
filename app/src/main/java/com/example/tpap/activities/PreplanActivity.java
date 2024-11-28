@@ -105,6 +105,11 @@ public class PreplanActivity extends AppCompatActivity {
             travel_endDate = endDate;
             Toast.makeText(this, "선택된 여행 종료 날짜: " + travel_endDate, Toast.LENGTH_SHORT).show();
         });
+        travelInfoVM.style.observe(this, style -> {
+            // location 데이터가 업데이트되면 Toast로 표시
+            travel_style = style;
+            Toast.makeText(this, "선택된 여행 스타일: " + travel_style, Toast.LENGTH_SHORT).show();
+        });
     }
     public void resetVM(int i)
     {

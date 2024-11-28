@@ -5,10 +5,86 @@
     android:layout_height="match_parent"
     tools:context=".fragments.TravelStyleFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="hello_blank_fragment" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
+        <!-- 제목 -->
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Your Travel Style (Max 3)"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:paddingBottom="16dp"/>
+
+        <!-- 체크박스 리스트 -->
+        <CheckBox
+            android:id="@+id/option1CheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Visit museums and art galleries"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/option2CheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Relax at scenic cafes"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/option3CheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Explore popular tourist attractions"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/option4CheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go on a food tour"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/option5CheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enjoy shopping"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/option6CheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Experience nature and outdoor activities"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/option7CheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Join local festivals and events"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/option8CheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Find photogenic spots for photography"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/option9CheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Discover historical landmarks"
+            android:layout_marginBottom="8dp" />
+    </LinearLayout>
 </FrameLayout>
