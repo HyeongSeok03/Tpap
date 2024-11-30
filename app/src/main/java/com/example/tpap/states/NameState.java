@@ -18,6 +18,7 @@ public class NameState implements BaseState{
             return null;
         }
         activity.fragmentTransaction(new LoadingFragment());
+        activity.generatePlan();
         return new LoadingState(activity);
     }
 

@@ -1,3 +1,8 @@
+import java.util.Properties
+
+val keyProperties = Properties()
+keyProperties.load(project.rootProject.file("local.properties").inputStream())
+
 plugins {
     alias(libs.plugins.android.application)
 }
@@ -5,13 +10,14 @@ plugins {
 android {
     namespace = "com.example.tpap"
     compileSdk = 34
-
     defaultConfig {
         applicationId = "com.example.tpap"
         minSdk = 28
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+
+        buildConfigField("String", "GPT_API_KEY", "\"${keyProperties["GPT_API_KEY"]}\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -28,6 +34,9 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        buildConfig = true
     }
 }
 
