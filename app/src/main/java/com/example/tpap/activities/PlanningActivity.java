@@ -37,7 +37,7 @@ public class PlanningActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_preplan);
+        setContentView(R.layout.activity_planning);
 
         exit_button = findViewById(R.id.close_button);
         previous_button = findViewById(R.id.previous_button);

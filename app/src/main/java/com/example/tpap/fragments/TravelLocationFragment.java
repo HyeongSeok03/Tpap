@@ -71,8 +71,6 @@ public class TravelLocationFragment extends Fragment {
             }
         });
 
-
-
         results_listView.setOnItemClickListener((parent, view, position, id) -> {
             HashMap<String, String> selectedItem = (HashMap<String, String>)adapter.getItem(position);
             String primary = selectedItem.get("primary");
