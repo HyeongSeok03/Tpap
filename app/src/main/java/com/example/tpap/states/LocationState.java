@@ -1,16 +1,13 @@
 package com.example.tpap.states;
 
-import android.widget.Toast;
-
-import com.example.tpap.R;
 import com.example.tpap.activities.MainActivity;
-import com.example.tpap.activities.PreplanActivity;
+import com.example.tpap.activities.PlanningActivity;
 import com.example.tpap.fragments.TravelDateFragment;
 
 public class LocationState implements BaseState{
-    private PreplanActivity activity;
+    private PlanningActivity activity;
 
-    public LocationState(PreplanActivity activity)
+    public LocationState(PlanningActivity activity)
     {
         this.activity = activity;
     }

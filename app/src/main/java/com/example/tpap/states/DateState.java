@@ -1,13 +1,13 @@
 package com.example.tpap.states;
 
-import com.example.tpap.activities.PreplanActivity;
+import com.example.tpap.activities.PlanningActivity;
 import com.example.tpap.fragments.TravelLocationFragment;
 import com.example.tpap.fragments.TravelStyleFragment;
 
 public class DateState implements BaseState{
-    private PreplanActivity activity;
+    private PlanningActivity activity;
 
-    public DateState(PreplanActivity activity)
+    public DateState(PlanningActivity activity)
     {
         this.activity = activity;
     }

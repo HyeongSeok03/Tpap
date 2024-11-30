@@ -1,6 +1,5 @@
 package com.example.tpap.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,16 +13,12 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.tpap.R;
-import com.example.tpap.fragments.TravelDateFragment;
 import com.example.tpap.fragments.TravelLocationFragment;
-import com.example.tpap.fragments.TravelStyleFragment;
 import com.example.tpap.states.BaseState;
 import com.example.tpap.states.LocationState;
 import com.example.tpap.view_models.TravelInfoViewModel;
 
-import java.util.prefs.BackingStoreException;
-
-public class PreplanActivity extends AppCompatActivity {
+public class PlanningActivity extends AppCompatActivity {
     enum FragState {location, date, style}
     FragState fragState = FragState.location;
     Button previous_button, next_button;
@@ -131,7 +126,7 @@ public class PreplanActivity extends AppCompatActivity {
     }
     public void activityTransaction(Class<?> activity)
     {
-        Intent intent = new Intent(PreplanActivity.this, activity);
+        Intent intent = new Intent(PlanningActivity.this, activity);
         startActivity(intent);
     }
     public void makeToast(String txt)

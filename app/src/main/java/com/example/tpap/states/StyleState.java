@@ -1,14 +1,12 @@
 package com.example.tpap.states;
 
-import com.example.tpap.activities.PreplanActivity;
+import com.example.tpap.activities.PlanningActivity;
 import com.example.tpap.fragments.TravelDateFragment;
 
-import java.util.Date;
-
 public class StyleState implements BaseState{
-    private PreplanActivity activity;
+    private PlanningActivity activity;
 
-    public StyleState(PreplanActivity activity)
+    public StyleState(PlanningActivity activity)
     {
         this.activity = activity;
     }
