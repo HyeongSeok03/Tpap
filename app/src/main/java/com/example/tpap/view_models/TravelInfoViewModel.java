@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class TravelInfoViewModel extends ViewModel {
+    public MutableLiveData<String> fileName = new MutableLiveData<>();
     public MutableLiveData<String> destination = new MutableLiveData<>();
     public MutableLiveData<String> startDate = new MutableLiveData<>();
     public MutableLiveData<String> endDate = new MutableLiveData<>();

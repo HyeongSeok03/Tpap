@@ -77,7 +77,7 @@ public class TravelLocationFragment extends Fragment {
             String secondary = selectedItem.get("secondary");
             String location = primary;
             if (!secondary.isEmpty()) {
-                location += String.format("(%s)", secondary);
+                location += String.format(" (%s)", secondary);
             }
 
             searchView.setQuery(location, false);  // false로 설정하여 직접 검색을 트리거하지 않음

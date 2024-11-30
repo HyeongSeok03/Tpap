@@ -31,7 +31,7 @@ public class DateState implements BaseState{
 
     @Override
     public void updateUI() {
-        activity.setTitle("When");
+        activity.setTitle("When", "would you like to travel");
         activity.setButtonText("Previous", "Next");
     }
 }

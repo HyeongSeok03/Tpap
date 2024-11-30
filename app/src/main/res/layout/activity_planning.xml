@@ -1,80 +1,84 @@
-<!-- res/layout/activity_search.xml -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <View
-        android:id="@+id/title_view"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="#00BCD4"/>
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/title_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:gravity="bottom"
-        android:layout_marginStart="20dp"
-        android:text="1. Where"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="#fff"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_below="@+id/title_textView"
-        android:layout_marginStart="60dp"
-        android:gravity="top"
-        android:text="would you like to travel"
-        android:textSize="20sp"
-        android:textColor="#fff"/>
-    <ImageButton
-        android:id="@+id/close_button"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/baseline_close_24"
-        android:backgroundTint="#FFFFFF" />
-
-    <FrameLayout
-        android:id="@+id/frame_preplan"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/title_view"
-        android:layout_above="@+id/actionButton_constraintLayout">
-
-    </FrameLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/actionButton_constraintLayout"
+    <RelativeLayout
+        android:id="@+id/title_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:paddingTop="20dp">
+        android:background="#00BCD4">
+
+        <TextView
+            android:id="@+id/title_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:gravity="bottom"
+            android:text="1. Where"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/subTitle_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@id/title_textView"
+            android:layout_marginStart="60dp"
+            android:gravity="top"
+            android:text="would you like to travel"
+            android:textSize="20sp"
+            android:textColor="#fff" />
+
+        <ImageButton
+            android:id="@+id/close_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/baseline_close_24"
+            android:backgroundTint="#FFFFFF" />
+    </RelativeLayout>
+
+    <!-- Frame Section -->
+    <FrameLayout
+        android:id="@+id/frame_planning"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </FrameLayout>
+
+    <!-- Action Buttons Section -->
+    <RelativeLayout
+        android:id="@+id/actionButton_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
 
         <Button
             android:id="@+id/previous_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginBottom="20dp"
-            android:backgroundTint="#969696"
+            android:backgroundTint="#A0A0A0"
             android:padding="0dp"
             android:text="Previous"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_alignParentStart="true" />
 
         <Button
             android:id="@+id/next_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
             android:backgroundTint="#00BCD4"
             android:padding="0dp"
             android:text="Next"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</RelativeLayout>
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+</LinearLayout>

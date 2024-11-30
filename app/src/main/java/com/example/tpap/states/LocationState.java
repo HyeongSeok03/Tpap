@@ -30,7 +30,7 @@ public class LocationState implements BaseState{
 
     @Override
     public void updateUI() {
-        activity.setTitle("Where");
+        activity.setTitle("Where", "would you like to travel");
         activity.setButtonText("Cancel", "Next");
     }
 }

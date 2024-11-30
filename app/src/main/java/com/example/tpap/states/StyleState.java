@@ -2,6 +2,7 @@ package com.example.tpap.states;
 
 import com.example.tpap.activities.PlanningActivity;
 import com.example.tpap.fragments.TravelDateFragment;
+import com.example.tpap.fragments.TravelNameFragment;
 
 public class StyleState implements BaseState{
     private PlanningActivity activity;
@@ -15,8 +16,10 @@ public class StyleState implements BaseState{
         if (activity.travel_style.isEmpty())
         {
             activity.makeToast("You should select your travel style");
+            return null;
         }
-        return null;
+        activity.fragmentTransaction(new TravelNameFragment());
+        return new NameState(activity);
     }
 
     @Override
@@ -28,7 +31,7 @@ public class StyleState implements BaseState{
 
     @Override
     public void updateUI() {
-        activity.setTitle("How");
-        activity.setButtonText("Previous", "Generate Plan");
+        activity.setTitle("How", "would you like to travel");
+        activity.setButtonText("Previous", "Next");
     }
 }
