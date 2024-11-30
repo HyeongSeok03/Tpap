@@ -74,7 +74,9 @@ public class TravelLocationFragment extends Fragment {
 
 
         results_listView.setOnItemClickListener((parent, view, position, id) -> {
-            String location = ((HashMap<String, String>)adapter.getItem(position)).get("primary");
+            String primary = ((HashMap<String, String>)adapter.getItem(position)).get("primary");
+            String secondary = ((HashMap<String, String>)adapter.getItem(position)).get("secondary");
+            String location = String.format("%s (%s)", primary, secondary);
             searchView.setQuery(location, false);  // false로 설정하여 직접 검색을 트리거하지 않음
             // 키보드를 숨기기 위해 InputMethodManager를 사용
             InputMethodManager imm = (InputMethodManager) requireContext().getSystemService(Context.INPUT_METHOD_SERVICE);
