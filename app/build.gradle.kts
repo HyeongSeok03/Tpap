@@ -18,6 +18,7 @@ android {
         versionName = "1.0"
 
         buildConfigField("String", "GPT_API_KEY", "\"${keyProperties["GPT_API_KEY"]}\"")
+        buildConfigField("String", "MAP_API_KEY", "\"${keyProperties["MAP_API_KEY"]}\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

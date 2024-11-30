@@ -13,6 +13,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.SimpleAdapter;
+
+import com.example.tpap.BuildConfig;
 import com.example.tpap.R;
 import com.example.tpap.view_models.TravelInfoViewModel;
 import com.google.android.libraries.places.api.Places;
@@ -47,7 +49,7 @@ public class TravelLocationFragment extends Fragment {
         adapter = new SimpleAdapter(requireContext(), results, android.R.layout.simple_list_item_2, new String[]{"primary", "secondary"}, new int[] {android.R.id.text1, android.R.id.text2});
         results_listView.setAdapter(adapter);
 
-        Places.initialize(requireContext(), "AIzaSyBVMQQda-Awz_hWgiRiPBozdNFt5Bf2KIc");
+        Places.initialize(requireContext(), BuildConfig.MAP_API_KEY);
         placesClient = Places.createClient(requireContext());
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
