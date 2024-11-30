@@ -31,7 +31,7 @@
             android:layout_centerHorizontal="true"
             android:hint="Enter file name"
             android:padding="10dp"
-            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ " />/>
+            android:digits="1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ " />/>
 
     </RelativeLayout>
 </FrameLayout>
