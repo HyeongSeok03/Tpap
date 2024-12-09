@@ -188,11 +188,11 @@ public class PlanningActivity extends AppCompatActivity {
     {
         new Thread(() -> {
             String response = requestTravelPlan();
-            savePlanFile(response, travel_fileName);
+            String file_name = savePlanFile(response, travel_fileName);
             runOnUiThread(() -> {
                 // Navigate to PlanActivity
                 Intent intent = new Intent(this, PlanDisplayActivity.class);
-                intent.putExtra("destination", travel_destination);
+                intent.putExtra("fileName", file_name);
                 startActivity(intent);
                 finish();
             });
@@ -241,7 +241,7 @@ public class PlanningActivity extends AppCompatActivity {
         return String.format(
                 "Generate a travel plan for a trip to %s from %s to %s." +
                         " I prefer the following travel styles, so please reflect them as much as possible: %s." +
-                        " Your answer format: \"Destination* Paris* Start Date* 2024-12-14* End Date* 2024-12-20* Duration* 7* Plan Start* SAT 11/26* Morning: [GPT's plan]* Lunch: [Meal Recommendation]* Afternoon: [GPT's plan]* Dinner: [Meal Recommendation]* Night: [GPT's plan]* SUN 11/27* Morning: [GPT's plan]* Lunch: [Meal Recommendation]* Afternoon: [GPT's plan]* Dinner: [Meal Recommendation]* Night: [GPT's plan]* …\"." +
+                        " Your answer format: \"Destination*Paris*Start Date*2024-12-14*End Date*2024-12-20*Duration*7*Plan Start*SAT 11/26*Morning*[GPT's plan]*Lunch*[Meal Recommendation]*Afternoon*[GPT's plan]*Dinner*[Meal Recommendation]*Night*[GPT's plan]*SUN 11/27*Morning*[GPT's plan]*Lunch*[Meal Recommendation]*Afternoon*[GPT's plan]*Dinner*[Meal Recommendation]*Night*[GPT's plan]* …\"." +
                         " This is an example of your answer inside quotation marks." +
                         " Tags should indicate the type of activity in your plan and must only include the following options: (tourist attractions, shopping, museum, relaxation). If none of these apply, use 'Other'." +
                         " I need to convert your response into data, so you must strictly follow the format." +
@@ -254,12 +254,13 @@ public class PlanningActivity extends AppCompatActivity {
         );
     }
 
-    public void savePlanFile(String plan, String fileName) {
+    public String savePlanFile(String plan, String fileName) {
         String file_name = "plan_" + fileName.replace(" ", "_") + ".txt";
         try (FileOutputStream fos = openFileOutput(file_name, MODE_PRIVATE)) {
             fos.write(plan.getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return file_name;
     }
 }

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Thu 11/28"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+
+        <ImageView
+            android:id="@+id/arrowImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/baseline_arrow_drop_down_24"
+            app:tint="#969696" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/expandableContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="8dp"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Morning"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="4dp" />
+        <TextView
+            android:id="@+id/morning_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="contents"
+            android:textSize="16sp"
+            android:padding="4dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lunch"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="4dp" />
+        <TextView
+            android:id="@+id/lunch_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="contents"
+            android:textSize="16sp"
+            android:padding="4dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Afternoon"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="4dp" />
+        <TextView
+            android:id="@+id/afternoon_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="contents"
+            android:textSize="16sp"
+            android:padding="4dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dinner"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="4dp" />
+        <TextView
+            android:id="@+id/dinner_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="contents"
+            android:textSize="16sp"
+            android:padding="4dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Night"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="4dp" />
+        <TextView
+            android:id="@+id/night_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="contents"
+            android:textSize="16sp"
+            android:padding="4dp" />
+    </LinearLayout>
+</LinearLayout>
