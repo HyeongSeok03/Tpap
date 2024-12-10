@@ -1,6 +1,8 @@
 package com.example.tpap.activities;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,12 +42,16 @@ public class MainActivity extends AppCompatActivity {
         home_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                home_button.setBackgroundTintList(ColorStateList.valueOf(Color.BLACK));
+                account_button.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#C8C8C8")));
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new MainHomeFragment()).commit();
             }
         });
         account_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                account_button.setBackgroundTintList(ColorStateList.valueOf(Color.BLACK));
+                home_button.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#C8C8C8")));
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new MainAccountFragment()).commit();
             }
         });

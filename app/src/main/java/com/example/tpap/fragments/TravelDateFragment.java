@@ -81,7 +81,7 @@ public class TravelDateFragment extends Fragment {
         }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
 
         endDatePickerDialog.getDatePicker().setMinDate(startDateMillis); // 시작 날짜 이후만 선택 가능
-        endDatePickerDialog.getDatePicker().setMaxDate(startDateMillis + (1000L * 60 * 60 * 24 * 13)); // 14일 (밀리초)
+        endDatePickerDialog.getDatePicker().setMaxDate(startDateMillis + (1000L * 60 * 60 * 24 * 6)); // 14일 (밀리초)
         endDatePickerDialog.show();
     }
 }
