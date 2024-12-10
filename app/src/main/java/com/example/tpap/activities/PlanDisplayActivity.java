@@ -1,6 +1,8 @@
 package com.example.tpap.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TableLayout;
@@ -66,6 +68,14 @@ public class PlanDisplayActivity extends AppCompatActivity {
 
         DayPlanAdapter adapter = new DayPlanAdapter(this, dayPlans);
         plan_listView.setAdapter(adapter);
+
+        home_imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PlanDisplayActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private List<String> readPlanFromInternalStorage(String fileName) throws Exception {
