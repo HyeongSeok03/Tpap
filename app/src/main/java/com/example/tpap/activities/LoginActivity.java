@@ -2,12 +2,12 @@ package com.example.tpap.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
 import android.util.Log;
-import android.view.View;
+import android.view.Gravity;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,17 +29,20 @@ public class LoginActivity extends AppCompatActivity {
         password_editText = findViewById(R.id.password_editText);
         visibilityToggle = findViewById(R.id.visibility_toggle);
 
-        login_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String username = username_editText.getText().toString();
-                String password = password_editText.getText().toString();
-                if (username.equals("qwer") && password.equals("qwer"))
-                {
-                    Log.i("Transition", "LoginActivity -> MainActivity");
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
-                }
+        login_button.setOnClickListener(v -> {
+            String username = username_editText.getText().toString();
+            String password = password_editText.getText().toString();
+            if (username.equals("qwer") && password.equals("qwer"))
+            {
+                Log.i("Transition", "LoginActivity -> MainActivity");
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+            else
+            {
+                Toast toast = Toast.makeText(LoginActivity.this, "Both id and password is 'qwer'.", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
             }
         });
 
