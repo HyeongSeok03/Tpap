@@ -14,6 +14,7 @@ import android.widget.SimpleAdapter;
 
 import com.example.tpap.R;
 import com.example.tpap.activities.PlanDisplayActivity;
+import com.example.tpap.adapter.PlanFileAdapter;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -27,26 +28,37 @@ public class MainHomeFragment extends Fragment {
 
     private List<HashMap<String, String>> results;
 
+    private ListView plansListView;
+
+    PlanFileAdapter adapter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View fragmentView = inflater.inflate(R.layout.fragment_main_home, container, false);
-        ListView plansListView = fragmentView.findViewById(R.id.plans_listView);
+        plansListView = fragmentView.findViewById(R.id.plans_listView);
 
         results = new ArrayList<>();
         loadPlans();
 
-        SimpleAdapter adapter = new SimpleAdapter(requireContext(), results, R.layout.plan_file_item, new String[]{"primary", "secondary"}, new int[]{R.id.primary_text, R.id.secondary_text});
+        adapter = new PlanFileAdapter(this, requireContext(), results);
 
         plansListView.setAdapter(adapter);
 
-        plansListView.setOnItemClickListener((AdapterView<?> parent, View view, int position, long id) -> {
-            String fileName = results.get(position).get("fileName");
-            Intent intent = new Intent(requireContext(), PlanDisplayActivity.class);
-            intent.putExtra("fileName", fileName); // 원본 파일명 전달
-            startActivity(intent);
-        });
-
         return fragmentView;
+    }
+    public void move2PlanDisplayActivity(String fileName)
+    {
+        Intent intent = new Intent(requireContext(), PlanDisplayActivity.class);
+        intent.putExtra("fileName", fileName); // 원본 파일명 전달
+        startActivity(intent);
+    }
+
+    public void setListView()
+    {
+        results.clear();
+        loadPlans();
+        adapter = new PlanFileAdapter(this, requireContext(), results);
+        plansListView.setAdapter(adapter);
     }
 
     private void loadPlans() {

@@ -243,7 +243,6 @@ public class PlanningActivity extends AppCompatActivity {
                         " I prefer the following travel styles, so please reflect them as much as possible: %s." +
                         " Your answer format: \"Destination*Paris*Start Date*2024-12-14*End Date*2024-12-20*Duration*7*Plan Start*SAT 11/26*Morning*[GPT's plan]*Lunch*[Meal Recommendation]*Afternoon*[GPT's plan]*Dinner*[Meal Recommendation]*Night*[GPT's plan]*SUN 11/27*Morning*[GPT's plan]*Lunch*[Meal Recommendation]*Afternoon*[GPT's plan]*Dinner*[Meal Recommendation]*Night*[GPT's plan]* …\"." +
                         " This is an example of your answer inside quotation marks." +
-                        " Tags should indicate the type of activity in your plan and must only include the following options: (tourist attractions, shopping, museum, relaxation). If none of these apply, use 'Other'." +
                         " I need to convert your response into data, so you must strictly follow the format." +
                         " Text will be split using the * symbol, so make sure your generated text does not contain any * symbols." +
                         " Ignore quotation marks and square brackets. you need to modify and fill in the destination, dates, duration.",

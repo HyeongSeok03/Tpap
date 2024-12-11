@@ -45,7 +45,7 @@ public class DayPlanAdapter extends BaseAdapter {
 
         if (convertView == null)
         {
-            convertView = LayoutInflater.from(context).inflate(R.layout.day_plan_item, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_day_plan, parent, false);
             holder = new ViewHolder();
             holder.headerLayout = convertView.findViewById(R.id.headerLayout);
             holder.arrowImageView = convertView.findViewById(R.id.arrowImageView);
