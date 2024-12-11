@@ -12,6 +12,7 @@ Travel Planning Application for P
 ## 3. 설치 및 사용 방법
 1. 안드로이드 스튜디오에서 프로젝트를 열고 안드로이드 기기를 연결하거나 가상 디바이스를 설치하여 실행할 수 있음.
 2. apk를 다운받아 앱을 설치하여 실행할 수 있음.
+   [apk file](https://github.com/HyeongSeok03/Tpap/blob/main/app-release.apk)
 
 ## 4. 주요 기능 및 구현
 ### <기능>
