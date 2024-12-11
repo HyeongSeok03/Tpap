@@ -95,4 +95,14 @@ Your answer format: "Destination*Paris*Start Date*2024-12-14*End Date*2024-12-20
 
 ## 6. 참고문헌
 
+[Android 안드로이드 시간, 날짜 특집3 ( TimePicker )](devziner.tistory.com)
+
+[안드로이드 View Model(뷰 모델)을 공부해보자!](todaycode.tistory.com)
+
+[안드로이드 Retrofit2 '레트로핏' - 기본 사용법](jaejong.tistory.com)
+
+[안드로이드 커스텀 리스트뷰 만드는 방법. (Android Custom ListView)](recipes4dev.tistory.com)
+
+[안드로이드 스튜디오 api키 숨기기](yeons4every.tistory.com)
+
 [안드로이드 스튜디오 배포용, 테스트용 APK 추출하기](learn2you.tistory.com)
