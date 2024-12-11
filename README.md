@@ -42,6 +42,7 @@ Travel Planning Application for P
 
 #### 계획 준비 페이지
 - 계획 준비 페이지는 여행지를 선택하는 페이지, 여행기간을 선택하는 페이지, 여행 스타일을 선택하는 페이지, 여행계획의 이름을 정하는 페이지가 있다.
+- 여행계획은 최대 일주일까지 선택가능하다.
   
   <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2008.png" width="200"/>    <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2009.png" width="200"/>    <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2010.png" width="200"/>    <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2011.png" width="200"/>
 
@@ -89,6 +90,8 @@ Your answer format: "Destination*Paris*Start Date*2024-12-14*End Date*2024-12-20
 - 개발 도중 gpt와의 통신 기능을 구현완료하고 깃에 push를 할때 오류가 났다. 이유를 보니 push 내용 중 api 키를 포함하였기 때문이라고 하였다. google map api 키를 재발급 받고, chatGPT api 키를 같이 .gitignore 파일에 정의된 local.properties 파일에 저장하고, 거기서 데이터를 불러오는 형식으로 하여 api 키를 숨기는 방법을 알게되었다. 
 
 ## 5. 라이센스
+기본적으로 MIT License를 따른다.
+
 ## 6. 참고문헌
 
 [안드로이드 스튜디오 배포용, 테스트용 APK 추출하기](learn2you.tistory.com)
