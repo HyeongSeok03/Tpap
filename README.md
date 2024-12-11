@@ -45,7 +45,7 @@ Travel Planning Application for P
   
   <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2008.png" width="200"/>    <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2009.png" width="200"/>    <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2010.png" width="200"/>    <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2011.png" width="200"/>
 
-- 마지막에 next버튼이 generate plan으로 바뀌고 누르면 로딩 페이지로 넘어가고 AI가 계획을 생성해 준 후 자동으로 계획 표시 페이지로 넘어간다.
+- 마지막에 generate plan 버튼을 누르면 로딩 페이지로 넘어가고 AI가 계획을 생성해 준 후 자동으로 계획 표시 페이지로 넘어간다.
 
 #### 계획 표시 페이지
 - 계획 표시 페이지에서는 생성된 계획을 볼 수 있다. 날짜별로 계획이 정리되어있고, 기본적으로는 접혀있지만, 눌러서 펼쳐볼 수 있다.
@@ -90,3 +90,5 @@ Your answer format: "Destination*Paris*Start Date*2024-12-14*End Date*2024-12-20
 
 ## 5. 라이센스
 ## 6. 참고문헌
+
+[안드로이드 스튜디오 배포용, 테스트용 APK 추출하기](learn2you.tistory.com)
