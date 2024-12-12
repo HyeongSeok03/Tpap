@@ -17,6 +17,7 @@ Travel Planning Application for P
 
 방법 2. apk를 다운받아 앱을 설치하여 실행할 수 있다.
    [apk file](https://github.com/HyeongSeok03/Tpap/blob/main/app-release.apk)
+   - 근데 약간 변수인게 apk 설치해서 실행하니까, 챗지피티에서 키 유출된거같다고 api 키를 disabled시켜버리더라구요. 그래서 되다가 갑자기 안될수도있습니다.
 
 ## 4. 주요 기능 및 구현
 ### <기능>
