@@ -20,15 +20,6 @@
         android:textSize="40sp"
         android:textStyle="bold"/>
 
-    <ImageButton
-        android:id="@+id/search_imageButton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/baseline_search_24"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"/>
-
     <View
         android:id="@+id/division_view_01"
         android:layout_width="match_parent"
