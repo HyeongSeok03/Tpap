@@ -112,27 +112,22 @@ public class PlanningActivity extends AppCompatActivity {
         travelInfoVM.destination.observe(this, location -> {
             // location 데이터가 업데이트되면 Toast로 표시
             travel_destination = location;
-            Toast.makeText(this, "선택된 여행지: " + travel_destination, Toast.LENGTH_SHORT).show();
         });
         travelInfoVM.startDate.observe(this, startDate -> {
             // location 데이터가 업데이트되면 Toast로 표시
             travel_startDate = startDate;
-            Toast.makeText(this, "선택된 여행 시작 날짜: " + travel_startDate, Toast.LENGTH_SHORT).show();
         });
         travelInfoVM.endDate.observe(this, endDate -> {
             // location 데이터가 업데이트되면 Toast로 표시
             travel_endDate = endDate;
-            Toast.makeText(this, "선택된 여행 종료 날짜: " + travel_endDate, Toast.LENGTH_SHORT).show();
         });
         travelInfoVM.style.observe(this, style -> {
             // location 데이터가 업데이트되면 Toast로 표시
             travel_style = style;
-            Toast.makeText(this, "선택된 여행 스타일: " + travel_style, Toast.LENGTH_SHORT).show();
         });
         travelInfoVM.fileName.observe(this, fileName -> {
             // location 데이터가 업데이트되면 Toast로 표시
             travel_fileName = fileName;
-            Toast.makeText(this, "선택된 파일 이름: " + travel_fileName, Toast.LENGTH_SHORT).show();
         });
     }
     public void resetVM(int i)
