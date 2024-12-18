@@ -23,45 +23,103 @@ Travel Planning Application for P
 #### 로그인 페이지
 - 로그인 페이지에는 비밀번호 옆 show 버튼이 구현되어있다. 비밀번호를 누르고 show 버튼을 누르면 입력한 비밀번호를 보여주고 다시 누르면 숨긴다. (버튼의 이미지도 변경된다.)
   
-  <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2001.png" width="200"/><img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2002.png" width="200"/>
+  <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%201.png" width="200"/><img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%202.png" width="200"/>
 - 회원가입 버튼은 따로 구현되어 있지 않다.
 - 아이디와 비밀번호는 모두 'qwer'이다.
 
 #### 메인 페이지
 - 메인 페이지에는 아래 내비게이션바를 통해 홈 페이지와 계정 페이지를 왔다갔다 할 수 있다. (내비게이션바의 현재 띄워진 페이지의 버튼이 진하게 변한다.)
-
-  
-  <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2003.png" width="200"/><img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2004.png" width="200"/>
-
 - 홈 페이지에는 지금까지 생성한 계획 리스트를 볼 수 있다. 클릭시 해당 계획을 보러 계획 표시 페이지로 이동한다. (만약 생성된 계획이 없다면 비어져있다.)
 
-  <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2005.png" width="200"/>
+  <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%203.png" width="200"/>
 - 계정 페이지에는 로그아웃 버튼이 구현되어있다. 로그인 페이지로 이동한다.
-
-  <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2006.png" width="200"/>
 
 - 내비게이션 바의 가운데 플러스 버튼을 눌러 새로운 여행 계획을 생성하러 갈 수 있다. 누를 시 Start Planning 버튼이 떠서 한번 더 확인하고, 배경을 눌러 취소할 수 있다.
 
-  <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2007.png" width="200"/>
+  <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%204.png" width="200"/>
 
 #### 계획 준비 페이지
 - 계획 준비 페이지는 여행지를 선택하는 페이지, 여행기간을 선택하는 페이지, 여행 스타일을 선택하는 페이지, 여행계획의 이름을 정하는 페이지가 있다.
 - 여행계획은 최대 일주일까지 선택가능하다.
   
-  <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2008.png" width="200"/>    <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2009.png" width="200"/>    <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2010.png" width="200"/>    <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2011.png" width="200"/>
+  <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%205.png" width="200"/>    <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%206.png" width="200"/>    <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%207.png" width="200"/>    <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%208.png" width="200"/>
 
 - 마지막에 generate plan 버튼을 누르면 로딩 페이지로 넘어가고 AI가 계획을 생성해 준 후 자동으로 계획 표시 페이지로 넘어간다.
+
+#### 로딩 페이지
+- 계획이 만들어지기 전까지 로딩페이지가 뜬다.
+- 로딩이 완료되면 자동으로 계획 표시 페이지로 넘어간다.
+
+<img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%209.png" width="200"/>
 
 #### 계획 표시 페이지
 - 계획 표시 페이지에서는 생성된 계획을 볼 수 있다. 날짜별로 계획이 정리되어있고, 기본적으로는 접혀있지만, 눌러서 펼쳐볼 수 있다.
 
-  <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2012.png" width="200"/>    <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2013.png" width="200"/>
+  <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2010.png" width="200"/>    <img src="https://github.com/HyeongSeok03/Tpap/blob/main/Images%20for%20README/Tpap%2011.png" width="200"/>
 
 ### <구현>
 
 #### 상태 패턴을 이용한 Fragment 간 전환
 - 계획 준비 페이지에서 next 혹은 previous 버튼을 누르면서 계속해서 fragment 변경을 하는데, 이때 상태 패턴을 이용해서 코드의 가독성과 유지보수성을 향상시켰다.
-- 아래는 베이스 상태 인터페이스 코드. 이것을 구현(implement)한 클래스들이 계획 준비 페이지 내에서 인스턴스화되어 사용된다.
+- 아래는 상태 패턴의 상태들을 하나의 객체(클래스)로 구현하기 전 switch문으로 구현한 코드이다.
+```java
+next_button.setOnClickListener(new View.OnClickListener() {
+  @Override
+  public void onClick(View v) {
+    Intent intent;
+    currentState = currentState.nextState);
+    switch (fragState)
+    {
+      case location:
+        if (travel_destination. isEmpty())
+        {
+          Toast.makeText(getApplicationContext),
+        }
+        else
+        {
+          text: "You should select your destination.", Toast. LENGTH_SHORT).show();
+          getSupportFragmentManager).beginTransaction).replace(R.id.frame_preplan, new TravelDateFragment()).commit(;
+          title_textView.setText("When");
+          fragState = FragState.date;
+        }
+        break;
+      case date:
+        if (travel_date.isEmpty())
+        {
+          Toast.makeText(getApplicationContext(), text: "You should select your travel dates.", Toast. LENGTH_SHORT). show() ;
+        }
+        else
+        {
+          getSupportFragmentManager (). beginTransaction().replace(R.id.frame_preplan, new TravelStyleFragment()).commit();
+          title_textView.setText("How");
+          fragState = FragState.style;
+        }
+        break;
+      case style:
+        if (travel_style.isEmpty())
+        {
+          Toast.makeText(getApplicationContext(), text: "You should select your travel style.", Toast. LENGTH_SHORT).show();
+        }
+        break;
+    }
+  }
+});
+```
+- 아래는 상태 객체들을 이용해서 수정된 코드이다.
+```java
+next_button.setOnClickListener(new View.OnClickListenerO i
+  @Override
+  public void onClick(View v) {
+    BaseState nextState = currentState.nextState;
+    if (nextState != null)
+    {
+      currentState = nextState;
+      currentState.updateUI@;
+    }
+  }
+});
+```
+- 아래는 베이스 상태 인터페이스 코드. 이것을 구현(implement)한 클래스들이 계획 준비 페이지 내에서 상태 객체들로 인스턴스화되어 사용된다.
 ```java
 public interface BaseState {
     BaseState nextState();
@@ -73,6 +131,28 @@ public interface BaseState {
 #### 구글맵 api를 이용한 여행지 검색
 - 구글맵 api를 이용해서 여행지를 검색할때, 국가와 도시가 자동완성된다.
 - 정확하게는 google place api를 사용하였다.
+```java
+private void findPlaces(String query) {
+    FindAutocompletePredictionsRequest request = FindAutocompletePredictionsRequest.builder()
+            .setQuery(query).setTypesFilter(Arrays.asList("country", "locality"))
+            .build();
+
+    placesClient.findAutocompletePredictions(request).addOnSuccessListener(response -> {
+        results.clear();
+        for (AutocompletePrediction prediction : response.getAutocompletePredictions()) {
+            String primaryText = prediction.getPrimaryText(null).toString();
+            String secondaryText = prediction.getSecondaryText(null).toString();
+            HashMap<String, String> item = new HashMap<>();
+            item.put("primary", primaryText); // 도시 이름
+            item.put("secondary", secondaryText); // 국가 이름
+            results.add(item);
+        }
+        adapter.notifyDataSetChanged();
+    }).addOnFailureListener(exception -> {
+        Toast.makeText(requireContext(), "failure", Toast.LENGTH_SHORT).show();
+    });
+}
+```
 
 #### 예외 처리
 - 앱 시용 시의 예외 처리에 많은 신경을 썼다.
@@ -82,6 +162,22 @@ public interface BaseState {
 #### 별도의 thread를 이용하여 로딩 페이지 구현
 - ChatGPT에게 계획서를 보내어 답변이 돌아올 때까지 상당한 시간이 소요됨. (약 10~20초)
 - 이때 앱이 멈추게되는데, 이것을 해결하기위해 별도의 thread에서 해당 작업을 실행하게 만들고, 메인 thread에서는 로딩 애니메이션 ui가 돌아가게 만들었다.
+```java
+public void generatePlan()
+{
+    new Thread(() -> {
+        String response = requestTravelPlan();
+        String file_name = savePlanFile(response, travel_fileName);
+        runOnUiThread(() -> {
+            // Navigate to PlanActivity
+            Intent intent = new Intent(this, PlanDisplayActivity.class);
+            intent.putExtra("fileName", file_name);
+            startActivity(intent);
+            finish();
+        });
+    }).start();
+}
+```
 
 #### Retrofit2를 이용한 ChatGPT API 네트워킹
 - 통신에 Retrofit2를 사용한 이유는 두가지 정도가 있다.
