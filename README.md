@@ -12,13 +12,10 @@ Travel Planning Application for P
 ## 2. 시연 영상
 [유튜브 바로가기](https://youtu.be/kGbRPcKUof0)
 
-## 3. 설치 및 사용 방법
-방법 1. 안드로이드 스튜디오에서 프로젝트를 열고 안드로이드 기기를 연결하거나 가상 디바이스를 설치하여 실행할 수 있다.
-
-방법 2. apk를 다운받아 앱을 설치하여 실행할 수 있다.
-   [apk file](https://github.com/HyeongSeok03/Tpap/blob/main/app-release.apk)
-   
-   (근데 약간 변수인게 apk 설치해서 실행하니까, 챗지피티에서 키 유출된거같다고 api 키를 disabled시켜버리더라구요. 그래서 되다가 갑자기 안될수도있습니다.)
+## 3. 실행 방법
+- 안드로이드 스튜디오에서 프로젝트를 열고 안드로이드 기기를 연결하거나 가상 디바이스를 설치하여 실행할 수 있다.
+- API 키는 깃허브에 올리지 않았습니다. 아래를 참고하여 주세요.
+- Android 파일 정렬 기준, Gradle Scripts 안에 local.properties 파일 내부에 "sdk.dir=..." 코드 아래에 과제란에 올린 코드를 복붙 해주시면 정상 실행 됩니다.
 
 ## 4. 주요 기능 및 구현
 ### <기능>
